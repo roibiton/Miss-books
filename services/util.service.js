@@ -35,6 +35,27 @@ export function loadFromStorage(key) {
     return (data) ? JSON.parse(data) : undefined
 }
 
+export function getReadingLevel(pageCount) {
+    if (pageCount > 500) return 'Serious Reading'
+    if (pageCount > 200) return 'Descent Reading'
+    if (pageCount < 100) return 'Light Reading'
+    return ''
+}
+
+export function getBookAge(publishedYear) {
+    const currentYear = new Date().getFullYear()
+    const age = currentYear - publishedYear
+    
+    if (age > 10) return 'Vintage'
+    if (age < 1) return 'New'
+    return ''
+}
+
+export function getPriceClass(price) {
+    if (price > 150) return 'expensive'
+    if (price < 20) return 'cheap'
+    return ''
+}
 
 export function animateCSS(el, animation, options = {}) {
     const { isRemoveClass = true } = options

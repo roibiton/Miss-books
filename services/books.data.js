@@ -73,7 +73,7 @@ export const books = [
       "Danielle Steel"
     ],
     "publishedDate": 1978,
-    "description": "interdum inceptos mauris habitant primis neque tempus lacus morbi auctor cras consectetur euismod vehicula neque netus enim vivamus augue molestie imperdiet tincidunt aliquam",
+    "description": "interdum inceptos mauris habitant primis neque tempus lacus morbi auctor cras consectetur euismod vehicula neque netus enim vivamus augue molestie imperdiet tincidunt aliquam lorem sit nunc natoque porta malesuada dapibus luctus",
     "pageCount": 303,
     "categories": [
       "Computers",
@@ -92,7 +92,8 @@ export const books = [
     "title": "sem himenaeos aptent",
     "subtitle": "interdum per habitasse luctus purus est",
     "authors": [
-      "Dr. Seuss"
+      "Dr. Seuss",
+      "Leo Tolstoy"
     ],
     "publishedDate": 2011,
     "description": "et vehicula faucibus amet accumsan lectus cras nulla cubilia arcu neque litora mi habitasse quis amet augue facilisis sed",

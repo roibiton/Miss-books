@@ -1,0 +1,16 @@
+.btn-read-more {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0;
+    text-decoration: underline;
+    font-size: 0.7em;
+
+    &:hover {
+        background-color: inherit;
+        color: var(--clr-primary-dark);
+        opacity: 0.8;
+    }
+}

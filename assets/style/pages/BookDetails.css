@@ -8,30 +8,45 @@
     border: 1px solid var(--border);
     max-width: 800px;
     margin: 2em auto;
-}
 
-.book-details h1 {
-    color: var(--primary);
-    font-size: 2em;
-}
+    & h1 {
+        color: var(--primary);
+        font-size: 2em;
+    }
 
-.book-details h5 {
-    color: var(--text-secondary);
-}
+    & h5 {
+        color: var(--text-secondary);
+    }
 
-.book-details img {
-    max-width: 200px;
-    display: block;
-    margin: 1em auto;
-    border-radius: 12px;
-}
+    & h4 {
+        &.expensive {
+            color: red;
+        }
 
-.book-details .description {
-    margin: 1em 0;
-    color: var(--text-primary);
-}
+        &.cheap {
+            color: green;
+        }
+    }
 
-.book-details .sale {
-    color: var(--danger);
-    font-weight: bold;
+    & img {
+        max-width: 200px;
+        display: block;
+        margin: 1em auto;
+        border-radius: 12px;
+    }
+
+    & .description {
+        margin: 1em 0;
+        color: var(--text-primary);
+    }
+
+    & .book-age,
+    & .reading-level {
+        font-weight: bold;
+        color: var(--primary);
+    }
+
+    & .sale {
+        color: var(--danger);
+        font-weight: bold;
 }
