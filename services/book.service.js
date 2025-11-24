@@ -75,8 +75,6 @@ function getDefaultFilter() {
 function _initBooks() {
     let books = loadFromStorage(BOOK_KEY)
     if (!books || !books.length) {
-        console.log('Initializing books with data:', initialBooks)
         saveToStorage(BOOK_KEY, initialBooks)
     }
-    return loadFromStorage(BOOK_KEY)
 }

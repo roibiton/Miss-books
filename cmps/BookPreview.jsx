@@ -1,8 +1,6 @@
-
-
 export function BookPreview({ book }) {
-    const price = book.listPrice?.amount ?? 0
-    const currency = book.listPrice?.currencyCode ?? 'USD'
+    const price = book.listPrice ? book.listPrice.amount : 0
+    const currency = book.listPrice ? book.listPrice.currencyCode : 'USD'
     
     return (
         <article className="book-preview">
