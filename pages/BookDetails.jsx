@@ -1,6 +1,7 @@
 import { bookService } from "../services/book.service.js"
 import { getReadingLevel, getBookAge, getPriceClass } from "../services/util.service.js"
 import { LongTxt } from "../cmps/LongTxt.jsx"
+import { Loader } from "../cmps/Loader.jsx"
 
 const { useState, useEffect } = React
 
@@ -20,7 +21,7 @@ export function BookDetails({ bookId, onBack }) {
             })
     }
 
-    if (!book) return <div>Loading...</div>
+    if (!book) return <Loader />
     const { title, subtitle, authors, publishedDate, description, pageCount, categories, thumbnail, language, listPrice } = book
     
     const readingLevel = getReadingLevel(pageCount)

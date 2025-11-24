@@ -2,6 +2,7 @@ import { BookFilter } from "../cmps/BookFilter.jsx"
 import { BookList } from "../cmps/BookList.jsx"
 import { bookService } from "../services/book.service.js"
 import { BookDetails } from "./BookDetails.jsx"
+import { Loader } from "../cmps/Loader.jsx"
 
 const { useState, useEffect } = React
 
@@ -47,7 +48,7 @@ export function BookIndex() {
         setFilterBy(bookService.getDefaultFilter())
     }
 
-    if (!books) return <div>Loading...</div>
+    if (!books) return <Loader />
     return (
         <section className="book-index">
             {!selectedBookId &&
