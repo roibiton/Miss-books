@@ -1,10 +1,13 @@
 
 
 export function BookPreview({ book }) {
+    const price = book.listPrice?.amount ?? 0
+    const currency = book.listPrice?.currencyCode ?? 'USD'
+    
     return (
         <article className="book-preview">
             <h2>{book.title}</h2>
-            <h4>Price: {book.listPrice.amount} {book.listPrice.currencyCode}</h4>
+            <h4>Price: {price} {currency}</h4>
             <img src={book.thumbnail} alt="Book Image" />
         </article>
     )
