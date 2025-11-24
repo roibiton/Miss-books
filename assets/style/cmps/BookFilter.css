@@ -46,10 +46,12 @@
 
         &:hover {
             background-color: var(--primary-dark, #2563eb);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
 
-.book-filter .clear-btn:active {
-    transform: translateY(0);
+        .book-filter .clear-btn:active {
+            transform: translateY(0);
+        }
+    }
 }

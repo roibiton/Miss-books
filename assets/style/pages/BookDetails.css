@@ -49,4 +49,5 @@
     & .sale {
         color: var(--danger);
         font-weight: bold;
+    }
 }
