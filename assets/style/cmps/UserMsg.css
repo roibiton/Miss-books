@@ -1,0 +1,31 @@
+.user-msg {
+    background-color: var(--text-primary);
+    padding: 1em 1.5em;
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.user-msg.success {
+    background-color: var(--accent);
+}
+
+.user-msg.error {
+    background-color: var(--danger);
+}
+
+.user-msg button {
+    float: right;
+    margin: 0 0 0 1em;
+    padding: 0.3em 0.8em;
+    font-size: 0.85em;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-msg button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

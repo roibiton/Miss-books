@@ -1,0 +1,26 @@
+.app-header {
+    background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
+    color: white;
+    padding: 1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    & section:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & .app-nav {
+        display: flex;
+        gap: 20px;
+        & a {
+            padding: 0.5em 1em;
+            border-radius: 6px;
+            transition: 0.2s;
+            &:hover {
+                cursor: pointer;
+                color: var(--primary-dark);
+            }
+        }
+    }
+}

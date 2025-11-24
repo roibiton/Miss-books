@@ -1,0 +1,37 @@
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--bg-card);
+    padding: 2em;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+.book-details h1 {
+    color: var(--primary);
+    font-size: 2em;
+}
+
+.book-details h5 {
+    color: var(--text-secondary);
+}
+
+.book-details img {
+    max-width: 200px;
+    display: block;
+    margin: 1em auto;
+    border-radius: 12px;
+}
+
+.book-details .description {
+    margin: 1em 0;
+    color: var(--text-primary);
+}
+
+.book-details .sale {
+    color: var(--danger);
+    font-weight: bold;
+}

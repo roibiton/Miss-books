@@ -1,0 +1,57 @@
+.book-filter {
+    background-color: var(--bg-card);
+    padding: 1.5em;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-block: 1.5em;
+}
+
+.book-filter h2 {
+    margin-top: 0;
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.book-filter form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(130px, 180px));
+    gap: 0.8em;
+    justify-content: center;
+}
+
+.book-filter form label {
+    justify-self: start;
+    color: var(--text-primary);
+}
+
+.book-filter form input {
+    justify-self: end;
+}
+
+.book-filter form button {
+    margin: 0.5em 0 0;
+    grid-column: 1 / 3;
+    justify-self: center;
+}
+
+.book-filter .clear-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5em 1.2em;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.book-filter .clear-btn:hover {
+    background-color: var(--primary-dark, #2563eb);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.book-filter .clear-btn:active {
+    transform: translateY(0);
+}
