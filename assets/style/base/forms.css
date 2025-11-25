@@ -7,10 +7,10 @@ button {
     border-radius: 8px;
     font-weight: 500;
     transition: 0.2s;
-}
 
-button:hover {
-    background-color: var(--primary-dark);
+    &:hover {
+        background-color: var(--primary-dark);
+    }
 }
 
 input, select, textarea {
@@ -18,10 +18,10 @@ input, select, textarea {
     border: 1px solid var(--border);
     border-radius: 8px;
     background-color: var(--bg-card);
-}
 
-input:focus, select:focus, textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    &:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
 }

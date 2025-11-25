@@ -1,5 +1,6 @@
 import { BookFilter } from "../cmps/BookFilter.jsx"
 import { BookList } from "../cmps/BookList.jsx"
+import { BookAdd } from "../cmps/BookAdd.jsx"
 import { bookService } from "../services/book.service.js"
 import { Loader } from "../cmps/Loader.jsx"
 import { showErrorMsg,showSuccessMsg } from "../services/event-bus.service.js"
@@ -11,6 +12,7 @@ export function BookIndex() {
 
     const [books, setBooks] = useState(null)
     const [filterBy, setFilterBy] = useState(bookService.getDefaultFilter())
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -51,6 +53,11 @@ export function BookIndex() {
         setFilterBy(bookService.getDefaultFilter())
     }
 
+    function onBookAdded(newBook) {
+        setBooks(books => [newBook, ...books])
+        setIsAddModalOpen(false)
+    }
+
     if (!books) return <Loader />
     return (
         <section className="book-index">
@@ -59,15 +66,27 @@ export function BookIndex() {
                 onSetFilter={onSetFilter}
                 onClearFilter={onClearFilter}
             />
-            <Link to="/book/edit">
-                <button>Add Book</button>
-            </Link>
+            <div className="book-actions">
+                <Link to="/book/edit">
+                    <button>Add Book</button>
+                </Link>
+                <button onClick={() => setIsAddModalOpen(true)}>
+                    Add from Google
+                </button>
+            </div>
 
             <BookList
                 books={books}
                 onRemoveBook={onRemoveBook}
                 onEditBook={onEditBook}
             />
+
+            {isAddModalOpen && (
+                <BookAdd 
+                    onClose={() => setIsAddModalOpen(false)}
+                    onBookAdded={onBookAdded}
+                />
+            )}
         </section>
     )
 }

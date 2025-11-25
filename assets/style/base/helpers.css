@@ -2,22 +2,22 @@
 
 .flex {
   display: flex;
-}
 
-.flex.flex-column{
-    flex-direction: column;
-}
+  &.flex-column {
+      flex-direction: column;
+  }
 
-.flex.justify-center{
-    justify-content: center;
-}
+  &.justify-center {
+      justify-content: center;
+  }
 
-.flex.justify-between{
-    justify-content: space-between;
-}
+  &.justify-between {
+      justify-content: space-between;
+  }
 
-.flex.align-center{
-    align-items: center;
+  &.align-center {
+      align-items: center;
+  }
 }
 
 /* text helpers */

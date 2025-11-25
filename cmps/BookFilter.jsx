@@ -14,7 +14,7 @@ export function BookFilter({ defaultFilter, onSetFilter }) {
 
     useEffect(() => {
         setFilterToEdit({ ...defaultFilter })
-    }, [defaultFilter.title, defaultFilter.minPrice, defaultFilter.authors])
+    }, [defaultFilter.title, defaultFilter.maxPrice, defaultFilter.authors])
 
     function handleChange({ target }) {
         const field = target.name
@@ -36,12 +36,12 @@ export function BookFilter({ defaultFilter, onSetFilter }) {
     }
 
     function clearFilter() {
-        const emptyFilter = { title: '', minPrice: '', authors: '' }
+        const emptyFilter = { title: '', maxPrice: '', authors: '' }
         setFilterToEdit(emptyFilter)
         onSetFilter(emptyFilter)
     }
 
-    const { title, minPrice, authors } = filterByToEdit
+    const { title, maxPrice, authors } = filterByToEdit
     return (
         <section className="book-filter container">
             <h2>Filter Our Books</h2>
@@ -53,8 +53,8 @@ export function BookFilter({ defaultFilter, onSetFilter }) {
                 <label htmlFor="authors">Authors</label>
                 <input onChange={handleChange} value={authors} name="authors" id="authors" type="text" />
 
-                <label htmlFor="minPrice">Min Price</label>
-                <input onChange={handleChange} value={minPrice || ''} name="minPrice" id="minPrice" type="number" />
+                <label htmlFor="maxPrice">Max Price</label>
+                <input onChange={handleChange} value={maxPrice || ''} name="maxPrice" id="maxPrice" type="number" />
 
                 <button type="button" onClick={clearFilter} className="clear-btn"><i className="fa-solid fa-broom"></i></button>
             </form>

@@ -13,7 +13,8 @@ export const bookService = {
     getEmptyBook,
     getDefaultFilter,
     addReview,
-    removeReview
+    removeReview,
+    addGoogleBook
 }
 
 function query(filterBy = {}) {
@@ -23,8 +24,8 @@ function query(filterBy = {}) {
                 const regExp = new RegExp(filterBy.title, 'i')
                 books = books.filter(book => regExp.test(book.title))
             }
-            if (filterBy.minPrice) {
-                books = books.filter(book => book.listPrice.amount >= filterBy.minPrice)
+            if (filterBy.maxPrice) {
+                books = books.filter(book => book.listPrice.amount <= filterBy.maxPrice)
             }
             if (filterBy.authors) {
                 const searchTerms = filterBy.authors.split(',').map(term => term.trim()).filter(term => term)
@@ -78,7 +79,7 @@ function getEmptyBook() {
 }
 
 function getDefaultFilter() {
-    return { title: '', minPrice: '', authors: '' }
+    return { title: '', maxPrice: '', authors: '' }
 }
 
 function _initBooks() {
@@ -134,4 +135,41 @@ function _makeId(length = 5) {
         text += possible.charAt(Math.floor(Math.random() * possible.length))
     }
     return text
+}
+
+function addGoogleBook(googleBook) {
+    // Check if book already exists in database
+    return query().then(books => {
+        const volumeInfo = googleBook.volumeInfo
+        const existingBook = books.find(book => 
+            book.title.toLowerCase() === volumeInfo.title.toLowerCase()
+        )
+        
+        if (existingBook) {
+            return Promise.reject('Book already exists in database')
+        }
+        
+        // Convert Google Books API format to our app format
+        const book = {
+            title: volumeInfo.title || 'Unknown Title',
+            subtitle: volumeInfo.subtitle || '',
+            authors: volumeInfo.authors || [],
+            publishedDate: volumeInfo.publishedDate ? 
+                parseInt(volumeInfo.publishedDate.substring(0, 4)) : 
+                new Date().getFullYear(),
+            description: volumeInfo.description || makeLorem(getRandomIntInclusive(10, 150)),
+            pageCount: volumeInfo.pageCount || getRandomIntInclusive(100, 800),
+            categories: volumeInfo.categories || [],
+            thumbnail: (volumeInfo.imageLinks && volumeInfo.imageLinks.thumbnail) || 
+                `http://coding-academy.org/books-photos/${getRandomIntInclusive(1, 20)}.jpg`,
+            language: volumeInfo.language || 'en',
+            listPrice: {
+                amount: getRandomIntInclusive(50, 1000),
+                currencyCode: 'EUR',
+                isOnSale: Math.random() > 0.5
+            }
+        }
+        
+        return save(book)
+    })
 }

@@ -1,14 +1,14 @@
 .home {
     text-align: center;
     padding: 2em 0;
-}
 
-.home h1 {
-    color: var(--primary);
-}
+    & h1 {
+        color: var(--primary);
+    }
 
-.home img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 12px;
+    & img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 12px;
+    }
 }
