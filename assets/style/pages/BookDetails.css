@@ -8,17 +8,27 @@
     border: 1px solid var(--border);
     max-width: 800px;
     margin: 2em auto;
+    min-height: calc(100vh - 200px);
 
     & h1 {
         color: var(--primary);
         font-size: 2em;
+        margin: 0.5em 0;
     }
 
-    & h5 {
+    & h2 {
         color: var(--text-secondary);
+        margin: 0.3em 0;
+    }
+
+    & h3 {
+        color: var(--text-primary);
+        margin: 0.5em 0;
     }
 
     & h4 {
+        margin: 0.5em 0;
+
         &.expensive {
             color: red;
         }
@@ -26,6 +36,11 @@
         &.cheap {
             color: green;
         }
+    }
+
+    & p {
+        margin: 0.5em 0;
+        color: var(--text-primary);
     }
 
     & img {
@@ -49,5 +64,67 @@
     & .sale {
         color: var(--danger);
         font-weight: bold;
+    }
+
+    & > button {
+        padding: 0.8em 1.5em;
+        border: none;
+        border-radius: 6px;
+        font-size: 1em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 1em;
+        background: var(--primary);
+        color: white;
+
+        &:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    & > section {
+        display: flex;
+        gap: 1em;
+        width: 100%;
+        margin-top: 1.5em;
+
+        & > a {
+            flex: 1;
+
+            & button {
+                width: 100%;
+                padding: 0.8em 1.5em;
+                border: none;
+                border-radius: 6px;
+                font-size: 1em;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s;
+                color: white;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+
+        & > a:first-child button {
+            background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
+        }
+
+        & > a:last-child button {
+            background: linear-gradient(135deg, var(--clr-secondary) 0%, var(--clr-primary) 100%);
+        }
+    }
+
+    &.loading {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
     }
 }

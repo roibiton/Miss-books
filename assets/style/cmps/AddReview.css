@@ -1,0 +1,131 @@
+.add-review {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2em;
+    margin: 2em 0;
+
+    & h3 {
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        color: var(--primary);
+        font-size: 1.5em;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    & .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    & label {
+        font-weight: 500;
+        color: var(--text-primary);
+    }
+
+    & input,
+    & select {
+        padding: 0.8em;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 1em;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        transition: border-color 0.2s;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+    }
+
+    & button[type="submit"] {
+        padding: 0.8em 1.5em;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 500;
+        transition: all 0.2s;
+        margin-top: 0.5em;
+
+        &:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.reviews-list {
+    margin-top: 2em;
+
+    & h3 {
+        margin-bottom: 1.5em;
+        color: var(--primary);
+        font-size: 1.5em;
+    }
+}
+
+.review-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5em;
+    margin-bottom: 1em;
+    position: relative;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    & .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8em;
+    }
+
+    & .reviewer-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 1.1em;
+    }
+
+    & .review-rating {
+        font-size: 1.2em;
+    }
+
+    & .review-date {
+        color: var(--text-secondary);
+        font-size: 0.9em;
+        margin-bottom: 1em;
+    }
+
+    & .delete-btn {
+        padding: 0.6em 1.2em;
+        background: var(--danger);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: 500;
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--danger-dark);
+            transform: translateY(-2px);
+        }
+    }
+}

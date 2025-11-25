@@ -1,25 +1,40 @@
-const { useState } = React
+const Router = ReactRouterDOM.HashRouter
+const { Route, Routes, Navigate } = ReactRouterDOM
 
 import { AppHeader } from "./cmps/AppHeader.jsx"
 import { About } from "./pages/About.jsx"
 import { Home } from "./pages/Home.jsx"
 import { BookIndex } from "./pages/BookIndex.jsx"
+import { NotFound } from "./pages/NotFound.jsx"
+import { BookDetails } from "./pages/BookDetails.jsx"
+import { BookEdit } from "./pages/BookEdit.jsx"
 import { AppFooter } from "./cmps/AppFooter.jsx"
+import { UserMsg } from "./cmps/UserMsg.jsx"
 
 export function RootCmp() {
 
-    const [page, setPage] = useState('book')
-
     return (
-        <section className="app">
-            <AppHeader onSetPage={setPage} />
-
-            <main>
-                {page === 'home' && <Home />}
-                {page === 'about' && <About />}
-                {page === 'book' && <BookIndex />}
-            </main>
-            <AppFooter />
-        </section>
+        <Router>
+            <section className="app">
+                <AppHeader/>
+                <UserMsg />
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="/home" />} />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/about" element={<About />} >
+                            {/* <Route path="/about/team" element={<Team />} />
+                            <Route path="/about/vision" element={<Vision />} /> */}
+                        </Route>
+                        <Route path="/book" element={<BookIndex />} />
+                        <Route path="/book/:bookId" element={<BookDetails />} />
+                        <Route path="/book/edit" element={<BookEdit />} />
+                        <Route path="/book/edit/:bookId" element={<BookEdit />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </main>
+                <AppFooter />
+            </section>
+        </Router>
     )
 } 

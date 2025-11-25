@@ -1,0 +1,95 @@
+.book-edit {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 2em;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+
+    & h1 {
+        color: var(--primary);
+        margin-bottom: 1.5em;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & label {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: -0.5em;
+        }
+
+        & input {
+            padding: 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1em;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: border-color 0.2s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+            }
+
+            &[type="range"] {
+                cursor: pointer;
+            }
+        }
+
+        & > section {
+            display: flex;
+            gap: 1em;
+            margin-top: 1em;
+
+            & > * {
+                flex: 1;
+            }
+
+            & button {
+                padding: 0.8em 1.5em;
+                border: none;
+                border-radius: 6px;
+                font-size: 1em;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:first-child {
+                    background: var(--primary);
+                    color: white;
+
+                    &:hover {
+                        background: var(--primary-dark);
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+
+            & a button {
+                width: 100%;
+                background: transparent;
+                border: 1px solid var(--border);
+                color: var(--text-primary);
+
+                &:hover {
+                    border-color: var(--primary);
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+
+    &.loading {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}

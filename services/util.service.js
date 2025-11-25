@@ -57,6 +57,22 @@ export function getPriceClass(price) {
     return ''
 }
 
+export function getCurrencySymbol(currencyCode) {
+    const currencySymbols = {
+        'USD': '$',
+        'EUR': '€',
+        'GBP': '£',
+        'JPY': '¥',
+        'ILS': '₪',
+        'INR': '₹',
+        'CNY': '¥',
+        'KRW': '₩',
+        'RUB': '₽',
+        'BRL': 'R$'
+    }
+    return currencySymbols[currencyCode] || currencyCode
+}
+
 export function animateCSS(el, animation, options = {}) {
     const { isRemoveClass = true } = options
 

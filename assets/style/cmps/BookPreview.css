@@ -5,17 +5,39 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    
+
+    & .sale-tag {
+        position: absolute;
+        top: 10px;
+        left: -35px;
+        background-color: red;
+        color: white;
+        padding: 10px 40px;
+        transform: rotate(-45deg);
+        font-weight: bold;
+        font-size: 0.5em;
+        text-transform: uppercase;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
 
     & h2 {
-        font-size: 1em;
+        font-size: 1.2em;
         color: var(--text-primary);
         margin: 0.5em 0;
+    }
+
+    & h3 {
+        font-size: 0.8em;
+        color: var(--text-secondary);
+        margin: 0.3em 0;
     }
 
     & h4 {
         color: var(--text-secondary);
         margin: 0.3em 0;
-        font-size: 0.9em;
+        font-size: 0.7em;
         font-weight: normal;
 
         &.expensive {
@@ -34,7 +56,7 @@
     }
 
     & img {
-        max-width: 100px;
+        width: 90%;
         border-radius: 8px;
     }
 }

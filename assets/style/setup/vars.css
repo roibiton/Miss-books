@@ -1,13 +1,17 @@
 :root {
     --primary: #6366f1;
     --clr-primary: #6366f1;
+    --clr-primary-light: #818cf8;
     --clr-secondary: #ec4899;
+    --clr-secondary-light: #f472b6;
     --primary-dark: #4f46e5;
     --secondary: #ec4899;
     --accent: #14b8a6;
     --danger: #ef4444;
+    --danger-dark: #dc2626;
 
     --bg-main: #f8fafc;
+    --bg-primary: #ffffff;
     --bg-card: #ffffff;
     --text-primary: #1e293b;
     --text-secondary: #64748b;

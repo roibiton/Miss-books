@@ -13,6 +13,7 @@
 @import "pages/About.css";
 @import "pages/BookIndex.css";
 @import "pages/BookDetails.css";
+@import "pages/BookEdit.css";
 
 
 /* Components */
@@ -24,3 +25,4 @@
 @import "cmps/LongTxt.css";
 @import "cmps/Loader.css";
 @import "cmps/AppFooter.css";
+@import "cmps/AddReview.css";
